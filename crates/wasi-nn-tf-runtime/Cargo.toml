@@ -1,0 +1,22 @@
+[package]
+name = "wasi-nn-tf-runtime"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wasi-nn-tf-runtime-sys = { path = "../wasi-nn-tf-runtime-sys" }
+libc = "0.2.98"
+num-complex = { version = "0.4.0", default-features = false }
+# tensorflow-internal-macros = { version = "=0.0.2", path = "tensorflow-internal-macros" }
+# BJONES Is it ok if I use the 0.0.1 version? Or do I need the latest? 0.0.2 isn't published to crates.io
+tensorflow-internal-macros = "0.0.1"
+byteorder = "1.4.3"
+crc = "2.0.0"
+half = "1.7.1"
+# This is used internally but not intended to be exposed through the API.
+protobuf = "=2.23.0"
+# Enables conversions between ndarray::Array objects and tensorflow::Tensor
+ndarray = { version = "0.15.3", optional = true }
+rustversion = "1.0.5"

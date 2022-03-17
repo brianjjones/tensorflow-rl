@@ -1,0 +1,2 @@
+[workspace]
+members = ["crates/wasi-nn-tf-runtime", "crates/wasi-nn-tf-runtime-sys"]
