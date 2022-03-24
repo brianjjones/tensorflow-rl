@@ -297,6 +297,8 @@ impl Graph {
     /// Creates a new graph.
     pub fn new() -> Graph {
         unsafe {
+            let retval = tf::library::load().or_else(|e| Err(e));
+
             Graph {
                 gimpl: Arc::new(GraphImpl {
                     inner: tf::TF_NewGraph(),
